@@ -77,8 +77,12 @@ function likes(names) {
 
 function narcissistic(value) {
     let sum = 0;
+    // console.log(value);
+    // console.log(value.toString())
+    // console.log(value.toString().split(''));
+
     let valueArray = Array.from(value.toString()).map(Number)
-    console.log(valueArray.length);
+    console.log(valueArray);
     valueArray.forEach((val) => {
         sum += (val ** (valueArray.length))
     })
@@ -90,7 +94,7 @@ function narcissistic(value) {
     }
   }
 
-//   console.log(narcissistic(1652))
+  console.log(narcissistic(153))
 
 // filter_list([1,2,'a','b']) == [1,2]
 // filter_list([1,'a','b',0,15]) == [1,0,15]
@@ -118,4 +122,4 @@ function order(words){
     }).join(' ')
   }
 
-  console.log(order('is2 Thi1s T4est 3a'))
+  // console.log(order('is2 Thi1s T4est 3a'))

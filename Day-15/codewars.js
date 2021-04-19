@@ -1,6 +1,5 @@
 // Given an array (arr) as an argument complete the function countSmileys that should return the total number of smiling faces.
 
-
 // Rules for a smiling face:
 
 // Each smiley face must contain a valid pair of eyes. Eyes can be marked as : or ;
@@ -130,4 +129,29 @@ function sumDigPow(a, b) {
   return answerArray;
 }
 
-console.log(sumDigPow(90, 100))
+// console.log(sumDigPow(90, 100))
+
+// Test.assertEquals(duplicateCount(""), 0);
+// Test.assertEquals(duplicateCount("abcde"), 0);
+// Test.assertEquals(duplicateCount("aabbcde"), 2);
+// Test.assertEquals(duplicateCount("aabBcde"), 2,"should ignore case");
+// Test.assertEquals(duplicateCount("Indivisibility"), 1)
+// Test.assertEquals(duplicateCount("Indivisibilities"), 2, "characters may not be adjacent")
+
+function duplicateCount(text) {
+  let count = 0;
+  let textArray = text.toLowerCase().split("");
+  while (textArray.length !== Array.from(new Set(textArray)).length) {
+    for (let i = 0; i < textArray.length; i++) {
+      for (let j = i + 1; j < textArray.length; j++) {
+        if (textArray[i] === textArray[j]) {
+          textArray = textArray.filter((item) => item !== textArray[i]);
+          count++;
+        }
+      }
+    }
+  }
+  return count;
+}
+
+duplicateCount("Indivisibilities");

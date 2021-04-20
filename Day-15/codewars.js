@@ -154,4 +154,36 @@ function duplicateCount(text) {
   return count;
 }
 
-duplicateCount("Indivisibilities");
+// console.log(duplicateCount("Indivisibilities"));
+
+// Meeting
+
+// Create a program that makes the string uppercase
+// gives it sorted in alphabetical order by last name
+// if last names are same, sort by first name
+
+
+s = "Fred:Corwill;Wilfred:Corwill;Barney:Tornbull;Betty:Tornbull;Bjon:Tornbull;Raphael:Corwill;Alfred:Corwill";
+//Answer is "(CORWILL, ALFRED)(CORWILL, FRED)(CORWILL, RAPHAEL)(CORWILL, WILFRED)(TORNBULL, BARNEY)(TORNBULL, BETTY)(TORNBULL, BJON)"
+
+function meeting(s) {
+  s = s.toUpperCase();
+ let sArray = s.split(';')
+  console.log(sArray);
+ let sArray2 = sArray.join(',')
+//  .replace(':', ',')
+//  .map(item => `(${item})`)
+  console.log(sArray2);
+//   let sArray3 = Array.from(sArray2)
+//   // let sArray2 = sArray.map(item => `(${item})` )
+//   // let sArray3 = new Object(sArray)
+//   console.log(sArray3);
+let sArray3 = sArray2.replace(/:/g, ',')
+console.log(sArray3);
+}
+
+
+
+
+
+meeting(s)

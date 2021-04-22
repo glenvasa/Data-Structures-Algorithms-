@@ -1,5 +1,7 @@
 // Day 17 Mission Part 1: Simple Sorting
 
+
+
 const simpleSort = (arr) => {
   arr = arr.sort((a, b) => {return a - b;});
   return arr;

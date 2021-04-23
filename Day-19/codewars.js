@@ -38,4 +38,24 @@ const fizzbuzz = (n) => {
   }
 };
 
-fizzbuzz(33);
+// fizzbuzz(33);
+
+
+// From YouTube mock Junior JS interview
+
+// Create fn that takes a word(string) that is jumbled and compare it against a list of 
+// correctly spelled words to see if there is a match when the word is unscrambled
+
+let list = ['mouse', 'gggggggg','car', 'computer', 'record', 'ffffffff']
+
+const unscramble = (str) => {
+  let sortedword = str.split('').sort().join('')
+  for(let j = 0; j < list.length; j++){
+    let sortedListword = list[j].split('').sort().join('')
+    if(sortedListword === sortedword){
+      console.log(`When you unscramble ${str} you get ${list[j]}`);
+    }   
+  }
+}
+
+unscramble('trcpmoue')

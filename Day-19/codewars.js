@@ -46,7 +46,7 @@ const fizzbuzz = (n) => {
 // Create fn that takes a word(string) that is jumbled and compare it against a list of 
 // correctly spelled words to see if there is a match when the word is unscrambled
 
-let list = ['mouse', 'gggggggg','car', 'computer', 'record', 'ffffffff']
+let list = ['mouse', 'gggggggg', 'car', 'computer', 'record', 'ffffffff']
 
 const unscramble = (str) => {
   let sortedword = str.split('').sort().join('')

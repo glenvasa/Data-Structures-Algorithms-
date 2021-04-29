@@ -1,36 +1,57 @@
-// Day 25 Misson: Linked List
+// Day 25 Mission: Linked List
 
-const linkedList = {
-  head:  {
-        value: 4,
-        next: {
-            value: 6,
-            next: {
-                value: 8,
-                next: {
-                    value: 2,
-                    next: null
-                }
-            }
-        }
+class Node {
+  constructor(data, next = null) {
+    (this.data = data), (this.next = next);
+  }
+}
+
+class LinkedList {
+  constructor() {
+    (this.head = null), (this.size = 0);
+  }
+
+  addElement = (data) => {
+    this.head = new Node(data, this.head);
+    this.size++;
+  };
+
+  removeElement = (index) => {
+    let curr = this.head;
+    let prev;
+    let count = 0;
+
+    if (index === 0) {
+      this.head = curr.next;
+    } else {
+      while (count < index) {
+        count++;
+        prev = curr;
+        curr = curr.next;
+      }
+
+      prev.next = curr.next;
     }
+    this.size--;
+  };
+
+  removeAllElements = () => {
+    this.head = null;
+    this.size = 0;
+  };
 }
 
-console.log(linkedList.length);
+const linkedList = new LinkedList();
+linkedList.addElement(1);
+linkedList.addElement(2);
+linkedList.addElement(3);
+linkedList.addElement(4);
 
-const addElement = (element) => {
-            for (let [key] of Object.keys(linkedList.head)) {
-                    if(linkedList.head.next === null){
-                        linkedList.head.next = element
-                    }
-                   else {
-                      
+console.log(linkedList)
 
+linkedList.removeElement(0)
+console.log(linkedList);
 
-                  
-                   }
-                  }
-              console.log(linkedList);    
-}
+linkedList.removeAllElements();
+console.log(linkedList);
 
-addElement({value: 10, next: null})

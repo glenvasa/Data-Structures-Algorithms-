@@ -30,7 +30,7 @@ const placeShips = () => {
   let ship2 = gameBoard[c][d];
 
   placedShips.push(ship1, ship2);
-  console.log(placedShips);
+
   strike();
 };
 
